@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "properties",
+  "info": {
+    "singularName": "property",
+    "pluralName": "properties",
+    "displayName": "property"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "bed": {
+      "type": "integer"
+    },
+    "bath": {
+      "type": "integer"
+    },
+    "sqm": {
+      "type": "decimal"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "salePrice": {
+      "type": "integer"
+    },
+    "owerName": {
+      "type": "string"
+    },
+    "call": {
+      "type": "string"
+    },
+    "sub_code": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sub-code.sub-code",
+      "inversedBy": "properties"
+    }
+  }
+}

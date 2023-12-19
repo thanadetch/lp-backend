@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sub_codes",
+  "info": {
+    "singularName": "sub-code",
+    "pluralName": "sub-codes",
+    "displayName": "SubCode",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codeId": {
+      "type": "uid"
+    },
+    "code": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::code.code",
+      "inversedBy": "sub_codes"
+    },
+    "properties": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::property.property",
+      "mappedBy": "sub_code"
+    }
+  }
+}
