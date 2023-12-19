@@ -715,7 +715,8 @@ export interface ApiKeywordKeyword extends Schema.CollectionType {
   info: {
     singularName: 'keyword';
     pluralName: 'keywords';
-    displayName: 'keyword';
+    displayName: 'Keyword';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -751,7 +752,8 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
   info: {
     singularName: 'property';
     pluralName: 'properties';
-    displayName: 'property';
+    displayName: 'Property';
+    description: '';
   };
   options: {
     draftAndPublish: true;

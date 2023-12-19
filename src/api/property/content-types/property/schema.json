@@ -4,7 +4,8 @@
   "info": {
     "singularName": "property",
     "pluralName": "properties",
-    "displayName": "property"
+    "displayName": "Property",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
