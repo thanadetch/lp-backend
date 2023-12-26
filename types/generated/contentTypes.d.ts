@@ -765,13 +765,14 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
     sqm: Attribute.Decimal;
     price: Attribute.Integer;
     salePrice: Attribute.Integer;
-    owerName: Attribute.String;
+    ownerName: Attribute.String;
     call: Attribute.String;
-    sub_code: Attribute.Relation<
+    subCode: Attribute.Relation<
       'api::property.property',
       'manyToOne',
       'api::sub-code.sub-code'
     >;
+    images: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -813,6 +814,7 @@ export interface ApiSubCodeSubCode extends Schema.CollectionType {
       'oneToMany',
       'api::property.property'
     >;
+    name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

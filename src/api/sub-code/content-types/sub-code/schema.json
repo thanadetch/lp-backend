@@ -25,7 +25,10 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::property.property",
-      "mappedBy": "sub_code"
+      "mappedBy": "subCode"
+    },
+    "name": {
+      "type": "string"
     }
   }
 }

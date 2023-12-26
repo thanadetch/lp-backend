@@ -30,17 +30,25 @@
     "salePrice": {
       "type": "integer"
     },
-    "owerName": {
+    "ownerName": {
       "type": "string"
     },
     "call": {
       "type": "string"
     },
-    "sub_code": {
+    "subCode": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::sub-code.sub-code",
       "inversedBy": "properties"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
