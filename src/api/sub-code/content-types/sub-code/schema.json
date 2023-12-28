@@ -15,12 +15,6 @@
     "codeId": {
       "type": "uid"
     },
-    "code": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::code.code",
-      "inversedBy": "sub_codes"
-    },
     "properties": {
       "type": "relation",
       "relation": "oneToMany",
@@ -29,6 +23,12 @@
     },
     "name": {
       "type": "string"
+    },
+    "code": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::code.code",
+      "inversedBy": "subCodes"
     }
   }
 }

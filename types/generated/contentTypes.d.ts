@@ -781,7 +781,7 @@ export interface ApiCodeCode extends Schema.CollectionType {
   };
   attributes: {
     codeId: Attribute.UID;
-    sub_codes: Attribute.Relation<
+    subCodes: Attribute.Relation<
       'api::code.code',
       'oneToMany',
       'api::sub-code.sub-code'
@@ -895,17 +895,17 @@ export interface ApiSubCodeSubCode extends Schema.CollectionType {
   };
   attributes: {
     codeId: Attribute.UID;
-    code: Attribute.Relation<
-      'api::sub-code.sub-code',
-      'manyToOne',
-      'api::code.code'
-    >;
     properties: Attribute.Relation<
       'api::sub-code.sub-code',
       'oneToMany',
       'api::property.property'
     >;
     name: Attribute.String;
+    code: Attribute.Relation<
+      'api::sub-code.sub-code',
+      'manyToOne',
+      'api::code.code'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

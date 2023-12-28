@@ -15,7 +15,7 @@
     "codeId": {
       "type": "uid"
     },
-    "sub_codes": {
+    "subCodes": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::sub-code.sub-code",
