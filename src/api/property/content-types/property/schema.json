@@ -50,9 +50,6 @@
         "images"
       ]
     },
-    "propertyCode": {
-      "type": "uid"
-    },
     "unitNo": {
       "type": "string"
     },
@@ -89,7 +86,8 @@
         "rent",
         "sell",
         "rent_and_sell"
-      ]
+      ],
+      "required": true
     },
     "postBy": {
       "type": "enumeration",
@@ -97,6 +95,10 @@
         "landlord",
         "agent"
       ]
+    },
+    "propertyCode": {
+      "type": "uid",
+      "required": true
     }
   }
 }

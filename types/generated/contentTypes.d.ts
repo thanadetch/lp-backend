@@ -864,7 +864,6 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
       'api::sub-code.sub-code'
     >;
     images: Attribute.Media;
-    propertyCode: Attribute.UID;
     unitNo: Attribute.String;
     floor: Attribute.String;
     isPetFriendly: Attribute.Boolean & Attribute.DefaultTo<false>;
@@ -883,8 +882,10 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
     >;
     ownerEmail: Attribute.String;
     ownerLineId: Attribute.String;
-    listingType: Attribute.Enumeration<['rent', 'sell', 'rent_and_sell']>;
+    listingType: Attribute.Enumeration<['rent', 'sell', 'rent_and_sell']> &
+      Attribute.Required;
     postBy: Attribute.Enumeration<['landlord', 'agent']>;
+    propertyCode: Attribute.UID & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
