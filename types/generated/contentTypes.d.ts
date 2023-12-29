@@ -857,13 +857,34 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
     price: Attribute.Integer;
     salePrice: Attribute.Integer;
     ownerName: Attribute.String;
-    call: Attribute.String;
+    ownerPhoneNo: Attribute.String;
     subCode: Attribute.Relation<
       'api::property.property',
       'manyToOne',
       'api::sub-code.sub-code'
     >;
     images: Attribute.Media;
+    code: Attribute.UID;
+    unitNo: Attribute.String;
+    floor: Attribute.String;
+    isPetFriendly: Attribute.Boolean & Attribute.DefaultTo<false>;
+    propertyType: Attribute.Enumeration<
+      [
+        'condo',
+        'apartment',
+        'service_apartment',
+        'house',
+        'townhouse',
+        'penthouse',
+        'duplex',
+        'commercial',
+        'land'
+      ]
+    >;
+    ownerEmail: Attribute.String;
+    ownerLineId: Attribute.String;
+    listingType: Attribute.Enumeration<['rent', 'sell', 'rent_and_sell']>;
+    postBy: Attribute.Enumeration<['landlord', 'agent']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

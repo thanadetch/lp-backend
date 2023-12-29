@@ -33,7 +33,7 @@
     "ownerName": {
       "type": "string"
     },
-    "call": {
+    "ownerPhoneNo": {
       "type": "string"
     },
     "subCode": {
@@ -48,6 +48,54 @@
       "required": false,
       "allowedTypes": [
         "images"
+      ]
+    },
+    "code": {
+      "type": "uid"
+    },
+    "unitNo": {
+      "type": "string"
+    },
+    "floor": {
+      "type": "string"
+    },
+    "isPetFriendly": {
+      "type": "boolean",
+      "default": false
+    },
+    "propertyType": {
+      "type": "enumeration",
+      "enum": [
+        "condo",
+        "apartment",
+        "service_apartment",
+        "house",
+        "townhouse",
+        "penthouse",
+        "duplex",
+        "commercial",
+        "land"
+      ]
+    },
+    "ownerEmail": {
+      "type": "string"
+    },
+    "ownerLineId": {
+      "type": "string"
+    },
+    "listingType": {
+      "type": "enumeration",
+      "enum": [
+        "rent",
+        "sell",
+        "rent_and_sell"
+      ]
+    },
+    "postBy": {
+      "type": "enumeration",
+      "enum": [
+        "landlord",
+        "agent"
       ]
     }
   }
