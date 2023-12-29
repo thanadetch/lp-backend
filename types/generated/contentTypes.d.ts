@@ -854,7 +854,7 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
     bed: Attribute.Integer;
     bath: Attribute.Integer;
     sqm: Attribute.Decimal;
-    price: Attribute.Integer;
+    rentalPrice: Attribute.Integer;
     salePrice: Attribute.Integer;
     ownerName: Attribute.String;
     ownerPhoneNo: Attribute.String;
@@ -864,7 +864,7 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
       'api::sub-code.sub-code'
     >;
     images: Attribute.Media;
-    code: Attribute.UID;
+    propertyCode: Attribute.UID;
     unitNo: Attribute.String;
     floor: Attribute.String;
     isPetFriendly: Attribute.Boolean & Attribute.DefaultTo<false>;

@@ -24,7 +24,7 @@
     "sqm": {
       "type": "decimal"
     },
-    "price": {
+    "rentalPrice": {
       "type": "integer"
     },
     "salePrice": {
@@ -50,7 +50,7 @@
         "images"
       ]
     },
-    "code": {
+    "propertyCode": {
       "type": "uid"
     },
     "unitNo": {
