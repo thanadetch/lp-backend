@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_configs",
+  "info": {
+    "singularName": "contact-config",
+    "pluralName": "contact-configs",
+    "displayName": "ContactConfig",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "isSendEmail": {
+      "type": "boolean",
+      "default": false
+    },
+    "receivedEmail": {
+      "type": "email"
+    }
+  }
+}

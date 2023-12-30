@@ -801,6 +801,78 @@ export interface ApiCodeCode extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactContact extends Schema.CollectionType {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'Contact';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    email: Attribute.Email;
+    phoneNo: Attribute.String;
+    lineId: Attribute.String;
+    property: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'api::property.property'
+    >;
+    listingType: Attribute.Enumeration<['rent', 'sell']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactConfigContactConfig extends Schema.SingleType {
+  collectionName: 'contact_configs';
+  info: {
+    singularName: 'contact-config';
+    pluralName: 'contact-configs';
+    displayName: 'ContactConfig';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    isSendEmail: Attribute.Boolean & Attribute.DefaultTo<false>;
+    receivedEmail: Attribute.Email;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-config.contact-config',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-config.contact-config',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiKeywordKeyword extends Schema.CollectionType {
   collectionName: 'keywords';
   info: {
@@ -965,6 +1037,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::code.code': ApiCodeCode;
+      'api::contact.contact': ApiContactContact;
+      'api::contact-config.contact-config': ApiContactConfigContactConfig;
       'api::keyword.keyword': ApiKeywordKeyword;
       'api::property.property': ApiPropertyProperty;
       'api::sub-code.sub-code': ApiSubCodeSubCode;
