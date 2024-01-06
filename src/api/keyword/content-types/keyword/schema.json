@@ -18,11 +18,22 @@
     "wordEn": {
       "type": "string"
     },
+    "searchType": {
+      "type": "enumeration",
+      "enum": [
+        "code",
+        "sub_code"
+      ]
+    },
+    "subCode": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-code.sub-code"
+    },
     "code": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::code.code",
-      "inversedBy": "keywords"
+      "relation": "oneToOne",
+      "target": "api::code.code"
     }
   }
 }

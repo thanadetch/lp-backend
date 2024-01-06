@@ -20,12 +20,6 @@
       "relation": "oneToMany",
       "target": "api::sub-code.sub-code",
       "mappedBy": "code"
-    },
-    "keywords": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::keyword.keyword",
-      "mappedBy": "code"
     }
   }
 }

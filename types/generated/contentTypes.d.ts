@@ -786,11 +786,6 @@ export interface ApiCodeCode extends Schema.CollectionType {
       'oneToMany',
       'api::sub-code.sub-code'
     >;
-    keywords: Attribute.Relation<
-      'api::code.code',
-      'oneToMany',
-      'api::keyword.keyword'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -887,9 +882,15 @@ export interface ApiKeywordKeyword extends Schema.CollectionType {
   attributes: {
     wordTh: Attribute.String;
     wordEn: Attribute.String;
+    searchType: Attribute.Enumeration<['code', 'sub_code']>;
+    subCode: Attribute.Relation<
+      'api::keyword.keyword',
+      'oneToOne',
+      'api::sub-code.sub-code'
+    >;
     code: Attribute.Relation<
       'api::keyword.keyword',
-      'manyToOne',
+      'oneToOne',
       'api::code.code'
     >;
     createdAt: Attribute.DateTime;
